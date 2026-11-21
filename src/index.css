@@ -1,0 +1,334 @@
+/* ========================================
+   DISEÑO BRAND BEMBOS - MEJORADO
+   Colores corporativos:
+   - Azul Marino: #001C71 (fondo, estructura)
+   - Rojo Bembos: #E30613 (acento, CTA, errores)
+   - Ámbar: #FFB800 (detalles, dinámica)
+   - Blanco: #FFFFFF (tarjetas, fondo)
+   - Gris oscuro: #2D3748 (texto principal)
+   - Gris medio: #4A5568 (texto secundario)
+   - Gris claro: #EDF2F7 (fondos auxiliares)
+   - Verde éxito: #38A169 (para items pagados)
+   ======================================== */
+
+/* Variables y raíz */
+:root {
+  --bembos-blue: #001C71;
+  --bembos-red: #E30613;
+  --bembos-amber: #FFB800;
+  --bembos-white: #FFFFFF;
+  --bembos-dark: #2D3748;
+  --bembos-medium: #4A5568;
+  --bembos-light: #EDF2F7;
+  --bembos-green: #38A169;
+  --bembos-bg: #F8FAFC;
+}
+
+/* Body con fondo suave */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bembos-bg);
+  color: var(--bembos-dark);
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.main-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Tarjeta principal - estilo elevado */
+.card {
+  background: var(--bembos-white);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 28, 113, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.1),
+    0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Header/header superior */
+.header-section {
+  background: linear-gradient(135deg, var(--bembos-blue), var(--bembos-red));
+  border-radius: 12px 12px 0 0;
+  padding: 2rem;
+  text-align: center;
+  margin: -2rem -2rem 2rem -2rem;
+  color: var(--bembos-white);
+}
+
+.header-section h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.header-section p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* Sección de colaborador */
+.collaborator-section {
+  background: var(--bembos-light);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--bembos-gray-200);
+}
+
+.collaborator-section p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.collaborator-section strong {
+  color: var(--bembos-blue);
+  font-weight: 600;
+}
+
+/* Select estilizado */
+.select-wrapper select {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid var(--bembos-gray-300);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--bembos-white);
+  color: var(--bembos-dark);
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.select-wrapper select:hover {
+  border-color: var(--bembos-medium);
+}
+
+.select-wrapper select:focus {
+  outline: none;
+  border-color: var(--bembos-blue);
+  box-shadow: 0 0 0 4px rgba(0, 28, 113, 0.15);
+}
+
+/* Listado de feriados */
+.feriado-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--bembos-gray-100);
+}
+
+.feriado-item:last-child {
+  border-bottom: none;
+}
+
+.feriado-item-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox-wrapper {
+  flex-shrink: 0;
+}
+
+.checkbox-input {
+  accent-color: var(--bembos-blue);
+  width: 18px;
+  height: 18px;
+}
+
+.feriado-info {
+  flex: 1;
+}
+
+.feriado-nombre {
+  font-weight: 600;
+  color: var(--bembos-dark);
+  font-size: 0.95rem;
+}
+
+.feriado-fecha {
+  font-size: 0.8rem;
+  color: var(--bembos-medium);
+}
+
+/* Caja de observaciones */
+.observation-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--bembos-gray-300);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: var(--bembos-white);
+  color: var(--bembos-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.observation-input:hover {
+  border-color: var(--bembos-medium);
+}
+
+.observation-input:focus {
+  outline: none;
+  border-color: var(--bembos-blue);
+  box-shadow: 0 0 0 4px rgba(0, 28, 113, 0.15);
+}
+
+/* Estado pagado */
+.pagado-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--bembos-light);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--bembos-dark);
+  font-weight: 500;
+}
+
+/* Contador/estadísticas */
+.stats-bar {
+  background: var(--bembos-light);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.stats-bar span {
+  color: var(--bembos-blue);
+  font-weight: 500;
+}
+
+/* Botones */
+.btn-primary {
+  background: linear-gradient(135deg, var(--bembos-blue), #2c5282);
+  color: var(--bembos-white);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 28, 113, 0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--bembos-amber);
+  color: var(--bembos-dark);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #F5A623;
+}
+
+/* Estados disabled */
+.select-wrapper select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.observation-input:disabled {
+  background: var(--bembos-gray-100);
+  color: var(--bembos-gray-400);
+  border-color: var(--bembos-gray-300);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .main-container {
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .header-section {
+    border-radius: 8px 8px 0 0;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    margin-top: 0.75rem;
+  }
+  
+  .feriado-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .feriado-nombre {
+    font-size: 1rem;
+  }
+  
+  .feriado-fecha {
+    display: none;
+  }
+}
